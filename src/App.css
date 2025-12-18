@@ -1,0 +1,101 @@
+/* Global reset can stay in index.css */
+* {
+  box-sizing: border-box;
+}
+
+/* App wrapper */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  background-color: #0f172a; /* dark navy */
+  font-family: 'Arial Rounded MT Bold', system-ui, sans-serif;
+}
+
+/* Counter container */
+.counter-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  align-items: center;
+  gap: 16px;
+  padding: 30px 36px;
+  background-color: #020617;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Counter value */
+.value {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #38bdf8; /* cyan accent */
+  text-align: center;
+  min-width: 70px;
+}
+
+/* Buttons */
+button {
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px; /* rounded */
+  cursor: pointer;
+  background-color: #1e293b;
+  color: #f8fafc;
+  transition: 
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+/* Hover */
+button:hover {
+  background-color: #334155;
+  box-shadow: 0 6px 15px rgba(56, 189, 248, 0.25);
+}
+
+/* Active (subtle animation) */
+button:active {
+  transform: scale(0.94);
+}
+
+/* Reset button */
+.App > button {
+  background-color: #ef4444;
+  padding: 12px 28px;
+  border-radius: 14px;
+}
+
+.App > button:hover {
+  background-color: #dc2626;
+}
+
+
+@media (max-width: 600px) {
+  .counter-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 14px;
+    padding: 20px;
+  }
+
+  /* Center value */
+  .value {
+    grid-column: 1 / -1;
+    font-size: 2.4rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+
+  #reset {
+    max-width: 130px;
+  }
+}
